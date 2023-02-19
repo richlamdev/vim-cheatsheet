@@ -2,13 +2,13 @@
 
 ### Buffers
 
-    :e {file}                  - edit {file} in a new buffer
+    :e[dit] {file}             - edit {file} in a new buffer
     :fin[d] {file}             - search and open {file}
     :b[uffer] {id}             - move to buffer using {id}
     :bn[ext], :bp[rev]         - go to the next/previous buffer
     :bf[irst], :bl[ast]        - go to first/last buffer
     :bd[elete]                 - delete a buffer (close a file)
-    :1,10bdelete               - delete buffers from ID 1 to 10
+    :1,10bd[elete]             - delete buffers from ID 1 to 10
     :ls or :buffers            - show all buffers
     :sb{id}                    - open buffer{id} as a horizontal split
     :vert sb{id}               - open buffer{id} as a vertical split
