@@ -2,7 +2,7 @@
 
 ### Buffers
 
-    :e {file}                    - edit {file} in a new buffer
+    :e[dit] {file}               - edit {file} in a new buffer
     :fin[d] {file}               - search and open {file}
     :b[uffer]{id}                - move to buffer using {id}
     :bn[ext], :bp[rev]           - go to the next/previous buffer
@@ -17,9 +17,9 @@
     :ball                        - open all buffers in horizonal splits
     :vert ball                   - open all buffers in vertical splits
     :bufdo {cmd}                 - execute {cmd} in each buffer in the list. eg: apply macro 'a' to each buffer :bufdo normal @a
-    CTRL  -^                     - switch to the alternate buffer. (indicated in buffer list with symbol #)
-    {id}CTRL  -^                 - switch to a specific buffer with {id}.
-
+    CTRL-^                       - switch to the alternate buffer. (indicated in buffer list with symbol #)
+    {id}CTRL-^                   - switch to a specific buffer with {id}.
+  
 ### Arguments
 
     :ar[gs]                      - display the arglist
@@ -124,6 +124,7 @@
     :cfdo {cmd}                  - execute {cmd} in each file in the quickfix list
 
 ### Go to variable definition
+
     *                            - search for the exact word under the cursor
     g*                           - same as *, but allows for partial matches
     #                            - search for the exact word under the cursor, reverse direction
