@@ -19,7 +19,7 @@
     :bufdo {cmd}                 - execute {cmd} in each buffer in the list. eg: apply macro 'a' to each buffer :bufdo normal @a
     CTRL-^                       - switch to the alternate buffer. (indicated in buffer list with symbol #)
     {id}CTRL-^                   - switch to a specific buffer with {id}.
-  
+
 ### Arguments
 
     :ar[gs]                      - display the arglist
@@ -89,11 +89,13 @@
     gf                           - go to file in cursor
 
 ### Change list
+
     :changes                     - Show change list
     g;                           - jump to the next change
     g,                           - jump to the previous change
 
 ### Quickfix list
+
     # commands that populate Quickfix list
     :vim[grep] /pattern {file}   - search using Vim's native functionality
     :gr[ep]                      - search via exteran program specified by grepprg setting
@@ -131,3 +133,18 @@
     g#                           - same as #, but allows for partial matches, reverse direction
     gd                           - go to local variable
     gD                           - go to global variable definition
+
+### Tags
+
+    CTRL-]                       - jump to tag under cursor
+    gCTRL-]                      - prompt user to select from multiple matches
+    :t[ag] {tag}                 - jump to tag {tag}
+    :t[ag] {tag} {file}          - jump to tag {tag} in file {file}
+    :t[ag] {tag} {file} {line}   - jump to tag {tag} in file {file} at line {line}
+    :tj[ump] {keyword}           - prompt uer select from multiple matches for {keyword}
+    :popup or <CTRL-t>           - reverse through tag history
+    :tn[ext]                     - jump to next matching tag
+    :tp[rev]                     - jump to previous matching tag
+    :tfirst                      - jump to first matching tag
+    :tlast                       - jump to last matching tag
+    :tselect                     - prompt user to choose an item from the tag match list
