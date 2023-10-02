@@ -81,7 +81,7 @@
     :tabo[nly]                   - close all tabs except for the current one
     :tabd[o] {cmd}               - execute {cmd} in each tab page
 
-### Jumps
+### Jump list
 
     CTRL  -o, CTRL-i             - go to the previous (older), next (is near o) cursor position
     :jumps                       - to display jump list
@@ -117,14 +117,15 @@
     :cope[n]                     - open quickfix window
     :ccl[ose]                    - close quifxix window
     :cn[ext], :cp[rev]           - jump to next/previous error
-    :cc{id}                      - jump to the {id} in the quickfix window
+    :cc {n}                      - jump to the {n} line in the quickfix window
     :cnf[ile], :cpf[file]        - jump to first error in the next/previous file
     :cab[ove], :cbe[ow]          - jump to the error above/below the current line
     :col[der], :cnew[er]         - go to the older/newer quickfix list
     :chi[story]                  - Show the list of quickfix lists
     :cfir[st], :cla[st]          - go to first/last location
     :cdo {cmd}                   - execute {cmd} in each valid entry in the quickfix list
-    :cfdo {cmd}     \            - execute {cmd} in each file in the quickfix list
+    :cfdo {cmd}                  - execute {cmd} in each file in the quickfix list
+    :colder, :cnewer             - go to older/newer quickfix list
 
 ### Go to variable definition
 
