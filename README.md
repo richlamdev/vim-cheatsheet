@@ -101,7 +101,8 @@
     :gr[ep]                      - search via exteran program specified by grepprg setting
     :helpgr[ep]                  - search help text files
     :mak[e]                      - call the program specified by the makeprg setting (default is make)
-    :cex[pr] {expression}        - use {expression} to populate to list. Clear the fix list via :cex []
+    :cex[pr] {expression}        - use {expression} to populate to list
+    :cex[pr] []                  - clear the quickfix list
 
     # examples
     :vim /foo/g %                - search in current active buffer only
@@ -123,7 +124,7 @@
     :chi[story]                  - Show the list of quickfix lists
     :cfir[st], :cla[st]          - go to first/last location
     :cdo {cmd}                   - execute {cmd} in each valid entry in the quickfix list
-    :cfdo {cmd}                  - execute {cmd} in each file in the quickfix list
+    :cfdo {cmd}     \            - execute {cmd} in each file in the quickfix list
 
 ### Go to variable definition
 
