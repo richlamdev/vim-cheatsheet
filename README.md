@@ -59,7 +59,7 @@
     CTRL-w T                     - break out current window into new tab
     :res[size] {num}             - resize active horizontal window by {num} rows
     :vert[ical] res[size] {num}  - resize active vertical window by {num} rows
-    {buffer_id}CTRL  -w ^        - split windows with the buffer of {ID}
+    {buffer_id}CTRL-w ^          - split windows with the buffer of {id}
     :windo {cmd}                 - execute {cmd} for all windows
     :windo difft[his]            - start diff mode in all open windows
     :windo diffo[ff]             - stop diff mode for all open windows
@@ -74,8 +74,8 @@
     :tabs                        - list tabs
     gt or :tabn[ext]             - move to the next tab
     gT or :tabp[rev]             - move to the previous tab
-    #gt                          - move to tab number #
-    :tabmove #                   - move current tab to #th position (indexed from 0)
+    {n}gt                        - move to tab number {n}
+    :tabmove {n}                 - move current tab to {n}th position (indexed from 0)
                                    if no position provided, moves to last position
     :tabc[lose]                  - close the current tab and all its windows
     :tabo[nly]                   - close all tabs except for the current one
@@ -83,7 +83,7 @@
 
 ### Jump list
 
-    CTRL  -o, CTRL-i             - go to the previous (older), next (is near o) cursor position
+    CTRL-o, CTRL-i               - go to the previous (older), next (is near o) cursor position
     :jumps                       - to display jump list
     :clearjumps                  - clear the jump list
     gf                           - go to file in cursor
@@ -111,6 +111,8 @@
     :vim /foo/g **/*             - search recursive current directory and below
     :vim /foo/g **/*.txt         - search recursive current directory and below in all *.txt file(s)
     :vim /foo/g ##               - search files in arglist
+    :vim /foo/gj ##              - search files in arglist, do not jump to first match
+    :vim /foo/gf ##              - search files in arglist, fuzzy match the pattern
 
     # commands to use Quickfix list
     :cw[indow]                   - open the quickfix window if it's not empty
