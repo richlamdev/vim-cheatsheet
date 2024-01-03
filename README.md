@@ -44,6 +44,7 @@
     CTRL-w v                     - split active window vertically
     CTRL-w w                     - switch windows
     CTRL-w p                     - switch to previous window
+    CTRL-w n                     - open new buffer in horizantal split
     CTRL-w q                     - quit a window
     CTRL-w j or CTRL-w <Dn>      - switch to windows below
     CTRL-w k or CTRL-w <Up>      - switch to window above
