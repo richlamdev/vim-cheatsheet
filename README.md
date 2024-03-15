@@ -24,7 +24,7 @@
 
     :ar[gs]                      - display the arglist
     :arga[dd]                    - add file to the arglist
-    :args **/*.yml               - add all yaml files from CWD and child folders
+    :ar[gs] **/*.yml             - add all yaml files from CWD and child folders
     :argd[elete]                 - to remove file from the arglist
     :argdo update                - save all changes to arglist
     :argdo undo                  - undo changes to your arglist
