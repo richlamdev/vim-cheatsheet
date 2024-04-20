@@ -8,7 +8,7 @@
     :bn[ext], :bp[rev]           - go to the next/previous buffer
     :bf[irst], :bl[ast]          - go to first/last buffer
     :bd[elete]                   - delete current/active buffer (close file)
-    :1,10bdelete                 - delete buffers from ID 1 to 10
+    :1,10bd[elete]               - delete buffers from ID 1 to 10
     :%bd[elete]                  - delete all buffers
     :ls or :buffers              - show all buffers
     :sb{id}                      - open buffer{id} as a horizontal split
@@ -23,12 +23,13 @@
 ### Arguments
 
     :ar[gs]                      - display the arglist
-    :arga[dd]                    - add file to the arglist
+    :arga[dd] {file(s)}          - add {file(s)} to the arglist
     :ar[gs] **/*.yml             - add all yaml files from CWD and child folders
-    :argd[elete]                 - to remove file from the arglist
+    :argd[elete] {file(s)}       - to remove {file(s)} from the arglist
+    :argd[elete] *               - remove all files from the arglist
+    :argdo {cmd}                 - execute {cmd} on every file in the arglist
     :argdo update                - save all changes to arglist
     :argdo undo                  - undo changes to your arglist
-    :argdo                       - execute a command on every file in the arglist
     :n[ext]                      - edit next file in the arglist
     :N[ext] or :prev             - edit previous file in the arglist
     :fir[st]                     - edit first file in the arglist
@@ -105,7 +106,7 @@
     :cex[pr] {expression}        - use {expression} to populate to list
     :cex[pr] []                  - clear the quickfix list
 
-    # examples
+    # vimgrep examples
     :vim /foo/g %                - search in current active buffer only
     :vim /foo/g fo.txt ab.txt    - search fo.txt and ab.txt for foo
     :vim /foo/g *.txt            - search *.txt for foo
