@@ -32,7 +32,9 @@
     :argdo undo                         - undo changes to your arglist
     :n[ext]                             - edit next file in the arglist
     :N[ext] or :prev                    - edit previous file in the arglist
-    :fir[st]                            - edit first file in the arglist
+    :wn[ext]                            - write current file then edit next file in the arglist
+    :wN[ext] or :wprev                  - write current file then edit previous file in the arglist
+    :fir[st] or :rew[ind]               - edit first file in the arglist
     :la[st]                             - edit last file in the arglist
 
 ### Windows
