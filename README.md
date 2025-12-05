@@ -163,4 +163,9 @@
 ### Global commands
     :g/pattern/#                        - finds all lines containing pattern and prints them with line number to the command line.
     :g/pattern/{cmd}                    - executes {cmd} on all lines containing pattern
+    :g/pattern/m0                       - move all lines containing pattern to the top of the file
+    :g/pattern/t$                       - move all lines containing pattern to the end of the file
+    :g/pattern/d _                      - remove all lines containing pattern, much faster, use blackhole register _
+    :g!/pattern/d (or :v/pattern/d)     - remove all lines not containing pattern
+    qaq:g/pattern/y A                   - copy all lines matching a pattern to register 'a'.
 
