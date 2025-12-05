@@ -36,6 +36,7 @@
     :wN[ext] or :wprev                  - write current file then edit previous file in the arglist
     :fir[st] or :rew[ind]               - edit first file in the arglist
     :la[st]                             - edit last file in the arglist
+    :argdo %s/old/new/ge | update       - replace "old" with "new" in each file in the arglist and save
 
 ### Windows
 
@@ -129,9 +130,11 @@
     :col[der], :cnew[er]                - go to the older/newer quickfix list
     :chi[story]                         - Show the list of quickfix lists
     :cfir[st], :cla[st]                 - go to first/last location
-    :cdo {cmd}                          - execute {cmd} in each valid entry in the quickfix list
-    :cfdo {cmd}                         - execute {cmd} in each file in the quickfix list
     :colder, :cnewer                    - go to older/newer quickfix list
+    :cdo {cmd}                          - execute {cmd} in each valid entry in the quickfix list
+    :cdo %s/old/new/gc | update         - replace "old" with "new" in each entry in the quickfix list and save
+    :cfdo {cmd}                         - execute {cmd} in each file in the quickfix list
+    :cfdo %s/old/new/gc | update        - replace "old" with "new" in each file in the quickfix list and save
 
 ### Go to variable definition
 
@@ -156,3 +159,8 @@
     :tfirst                             - jump to first matching tag
     :tlast                              - jump to last matching tag
     :tselect                            - prompt user to choose an item from the tag match list
+
+### Global commands
+    :g/pattern/#                        - finds all lines containing pattern and prints them with line number to the command line.
+    :g/pattern/{cmd}                    - executes {cmd} on all lines containing pattern
+
