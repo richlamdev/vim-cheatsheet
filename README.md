@@ -209,3 +209,27 @@
     :cdo g/pattern/d                      - delete all lines matching 'pattern' in all quickfix entries
     :cdo g/pattern/s/old/new/g            - replace 'old' with 'new' on matching lines in all quickfix entries
 
+### Marks
+
+    # Setting marks
+    m{a-z}                                - set a local mark {a-z} at the cursor position
+    m{A-Z}                                - set a global mark {A-Z} (accessible across files)
+
+    # Jumping to marks
+    '{a-z}                                - jump to the beginning of the line of local mark {a-z}
+    `{a-z}                                - jump to exact cursor position of local mark {a-z}
+    '{A-Z}                                - jump to line of global mark {A-Z} in its file
+    `{A-Z}                                - jump to exact position of global mark {A-Z} in its file
+
+    # Navigation shortcuts
+    ''                                    - jump to position before last jump
+
+    # Viewing / deleting marks
+    :marks                                - display all current marks
+    :delmarks {a-zA-Z}                    - delete specified marks
+    :delmarks!                            - delete all global marks
+
+    # Examples
+    ma                                    - set mark 'a' at cursor
+    `a                                    - jump to mark 'a'
+
