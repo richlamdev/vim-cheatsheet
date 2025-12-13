@@ -1,47 +1,68 @@
-# VIM Cheatsheet - Working with multiple files / Programming
+# VIM Cheatsheet - Working with multiple files
 
-### Buffers
+### Buffers - Open / Close / Save
 
-    :e[dit] {file}                      - edit {file} in a new buffer
+    :e[dit] {file}                      - load {file} into a buffer (replaces current window's buffer)
     :fin[d] {file}                      - search and open {file}
+    :badd {file}                        - add {file} to the buffer list without opening
+
+    :w[rite]                            - save current buffer
+    :w {file}                           - save current buffer as {file} (does not change buffer name)
+    :sav[eas] {file}                    - save current buffer as {file} and switch buffer to it
+    :wa[ll]                             - save all buffers
+    :up[date]                           - update current buffer
+
+    :r[ead] {file}                      - insert {file} below cursor
+    :r[ead] !{cmd}                      - insert output of {cmd} into current buffer
+
+    :e[dit]!                            - reload buffer, discard changes
+    :f[ile]                             - show current buffer name
+    :f[ile] {name}                      - change current buffer name (no write)
+
+    :bd[elete]                          - delete current/active buffer (close file)
+    :{n},{m}bd[elete]                   - delete buffers from {n} to {m}
+    :%bd[elete]                         - delete all buffers
+
+    :bufdo {cmd}                        - execute {cmd} in each buffer in the list. eg: apply macro 'a' to each buffer :bufdo normal @a
+    :buddo norm[al] @a                  - apply macro 'a' to each buffer
+
+### Buffers - Navigate
+
+    :ls or :buffers                     - show all buffers
     :b[uffer]{id}                       - move to buffer using {id}
     :bn[ext], :bp[rev]                  - go to the next/previous buffer
     :bf[irst], :bl[ast]                 - go to first/last buffer
-    :bd[elete]                          - delete current/active buffer (close file)
-    :1,10bd[elete]                      - delete buffers from ID 1 to 10
-    :%bd[elete]                         - delete all buffers
-    :ls or :buffers                     - show all buffers
+    CTRL-^                              - switch to the alternate buffer. (marked in buffer list with symbol #)
+    {id}CTRL-^                          - switch to buffer {id}.
+
     :sb{id}                             - open buffer{id} as a horizontal split
     :vert[ical] sb{id}                  - open buffer{id} as a vertical split
-    :badd {file}                        - add {file} to the buffer list
     :ball                               - open all buffers in horizonal splits
     :vert ball                          - open all buffers in vertical splits
-    :bufdo {cmd}                        - execute {cmd} in each buffer in the list. eg: apply macro 'a' to each buffer :bufdo normal @a
-    CTRL-^                              - switch to the alternate buffer. (indicated in buffer list with symbol #)
-    {id}CTRL-^                          - switch to a specific buffer with {id}.
 
 ### Arguments
 
     :ar[gs]                             - display the arglist
+    :ar[gs] {file(s)}                   - replace arglist with {file(s)}
     :arga[dd] {file(s)}                 - add {file(s)} to the arglist
     :ar[gs] **/*.yml                    - add all yaml files from CWD and child folders
     :argd[elete] {file(s)}              - to remove {file(s)} from the arglist
     :argd[elete] *                      - remove all files from the arglist
     :argdo {cmd}                        - execute {cmd} on every file in the arglist
     :argdo update                       - save all changes to arglist
-    :argdo undo                         - undo changes to your arglist
+    :argdo undo                         - undo last change in each arg buffer
     :n[ext]                             - edit next file in the arglist
     :N[ext] or :prev                    - edit previous file in the arglist
-    :wn[ext]                            - write current file then edit next file in the arglist
-    :wN[ext] or :wprev                  - write current file then edit previous file in the arglist
+    :wn[ext]                            - write current file, edit next arg
+    :wN[ext] or :wprev                  - write current file, edit previous arg
     :fir[st] or :rew[ind]               - edit first file in the arglist
     :la[st]                             - edit last file in the arglist
     :argdo %s/old/new/ge | update       - replace "old" with "new" in each file in the arglist and save
 
 ### Windows
 
-    :sp[lit] {file} or :new {file}      - open {file} in a new buffer and horizontally split window
-    :vs[plit] {file} or :vnew {file}    - open {file} in a new buffer and vertically split window
+    :sp[lit] {file} or :new {file}      - open {file} in a new buffer and create horizontall window
+    :vs[plit] {file} or :vnew {file}    - open {file} in a new buffer and create vertical window
     :on[ly]!                            - close all windows except current
     CTRL-w o                            - close all windows except current
     CTRL-w s                            - split active window horizontally
