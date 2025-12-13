@@ -103,12 +103,14 @@
 
 ### Tabs
 
-    :tabe[dit] {file}                   - open existing {file} in new tab
-    :tabe[dit] %                        - move the active window into its own tab
-    :tabn {file}                        - open {file} in a new tab
+    :tabe[dit] {file}                   - open {file} in a new tab
+    :tabnew {file}                      - open {file} in a new tab
+    :tabe[dit] %                        - open current buffer in a new tab
     :tabs                               - list tabs
     gt or :tabn[ext]                    - move to the next tab
     gT or :tabp[rev]                    - move to the previous tab
+    :tabfir[st]                         - move to first tab
+    :tabl[ast]                          - move to last tab
     {n}gt                               - move to tab number {n}
     :tabmove {n}                        - move current tab to {n}th position (indexed from 0)
                                           if no position provided, moves to last position
@@ -116,28 +118,30 @@
     :tabo[nly]                          - close all tabs except for the current one
     :tabd[o] {cmd}                      - execute {cmd} in each tab page
 
+
 ### Jump list
 
-    CTRL-o, CTRL-i                      - go to the previous (older), next (is near o) cursor position
+    CTRL-o                              - jump to older cursor position
+    CTRL-i                              - jump to newer cursor position
     :jumps                              - to display jump list
     :clearjumps                         - clear the jump list
-    gf                                  - go to file in cursor
+    gf                                  - edit file name under cursor
 
 ### Change list
 
-    :changes                            - Show change list
-    g;                                  - jump to the next change
-    g,                                  - jump to the previous change
+    :changes                            - display change list
+    g;                                  - jump to the previous (older) change
+    g,                                  - jump to the next (newer) change
 
 ### Quickfix list
 
     # commands that populate Quickfix list
-    :vim[grep] /pattern {file}          - search using Vim's native functionality
-    :gr[ep]                             - search via exteran program specified by grepprg setting
+    :vim[grep] /pattern {file}          - search using Vim's internal grep
+    :gr[ep]                             - search via external program specified by grepprg setting
     :helpgr[ep]                         - search help text files
     :mak[e]                             - call the program specified by the makeprg setting (default is make)
     :cex[pr] {expression}               - use {expression} to populate to list
-    :cex[pr] []                         - clear the quickfix list
+    :cex[pr] []                         - replace quickfix list with empty list (clear quickfix list)
 
     # vimgrep examples
     :vim /foo/g %                       - search in current active buffer only
@@ -152,28 +156,27 @@
     # commands to use Quickfix list
     :cw[indow]                          - open the quickfix window if it's not empty
     :cope[n]                            - open quickfix window
-    :ccl[ose]                           - close quifxix window
+    :ccl[ose]                           - close quickfix window
     :cn[ext], :cp[rev]                  - jump to next/previous error
-    :cc {n}                             - jump to the {n} line in the quickfix window
+    :cc {n}                             - jump to quickfix entry {n}
     :cnf[ile], :cpf[file]               - jump to first error in the next/previous file
     :cab[ove], :cbe[ow]                 - jump to the error above/below the current line
     :col[der], :cnew[er]                - go to the older/newer quickfix list
     :chi[story]                         - Show the list of quickfix lists
     :cfir[st], :cla[st]                 - go to first/last location
-    :colder, :cnewer                    - go to older/newer quickfix list
     :cdo {cmd}                          - execute {cmd} in each valid entry in the quickfix list
     :cdo %s/old/new/gc | update         - replace "old" with "new" in each entry in the quickfix list and save
     :cfdo {cmd}                         - execute {cmd} in each file in the quickfix list
     :cfdo %s/old/new/gc | update        - replace "old" with "new" in each file in the quickfix list and save
 
-### Go to variable definition
+### Go to symbol / word under cursor
 
     *                                   - search for the exact word under the cursor
-    g*                                  - same as *, but allows for partial matches
-    #                                   - search for the exact word under the cursor, reverse direction
-    g#                                  - same as #, but allows for partial matches, reverse direction
-    gd                                  - go to local variable
-    gD                                  - go to global variable definition
+    g*                                  - search for partial matches of word under cursor
+    #                                   - search for the exact word under the cursor (reverse)
+    g#                                  - search for partial matches of word under cursor (reverse)
+    gd                                  - go to local declaration of identifier under cursor
+    gD                                  - go to global declaration of identifier under cursor
 
 ### Tags
 
