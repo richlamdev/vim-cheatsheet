@@ -180,25 +180,32 @@
 
 ### Tags
 
-    CTRL-]                              - jump to tag under cursor
-    gCTRL-]                             - prompt user to select from multiple matches
-    :t[ag] {tag}                        - jump to tag {tag}
-    :t[ag] {tag} {file}                 - jump to tag {tag} in file {file}
-    :t[ag] {tag} {file} {line}          - jump to tag {tag} in file {file} at line {line}
-    :tj[ump] {keyword}                  - prompt uer select from multiple matches for {keyword}
-    :popup or <CTRL-t>                  - reverse through tag history
-    :tn[ext]                            - jump to next matching tag
-    :tp[rev]                            - jump to previous matching tag
-    :tfirst                             - jump to first matching tag
-    :tlast                              - jump to last matching tag
-    :tselect                            - prompt user to choose an item from the tag match list
+    CTRL-]                                - jump to tag under cursor
+    gCTRL-]                               - prompt user to select from multiple matching tags
+    :t[ag] {tag}                          - jump to tag {tag}
+    :t[ag] {tag} {file}                   - jump to tag {tag} in file {file}
+    :t[ag] {tag} {file} {line}            - jump to tag {tag} in file {file} at line {line}
+    :tj[ump] {keyword}                    - prompt user to select from matching tags for {keyword}
+    :CTRL-t                               - jump back in tag stack
+    :tn[ext]                              - jump to next matching tag
+    :tp[rev]                              - jump to previous matching tag
+    :tfirst                               - jump to first matching tag
+    :tlast                                - jump to last matching tag
+    :tselect                              - prompt user to select from matching tags
 
 ### Global commands
-    :g/pattern/#                        - finds all lines containing pattern and prints them with line number to the command line.
-    :g/pattern/{cmd}                    - executes {cmd} on all lines containing pattern
-    :g/pattern/m0                       - move all lines containing pattern to the top of the file
-    :g/pattern/t$                       - move all lines containing pattern to the end of the file
-    :g/pattern/d _                      - remove all lines containing pattern, much faster, use blackhole register _
-    :g!/pattern/d (or :v/pattern/d)     - remove all lines not containing pattern
-    qaq:g/pattern/y A                   - copy all lines matching a pattern to register 'a'.
+    :g/pattern/#                          - list all lines matching pattern with line numbers
+    :g/pattern/{cmd}                      - executes {cmd} on all lines matching pattern
+    :g/pattern/m0                         - move matching lines to the top of the file
+    :g/pattern/t$                         - move matching lines to the end of the file
+    :g/pattern/d _                        - delete all lines containing pattern without affecting registers (use blackhole register _ )
+    :g!/pattern/d or :v/pattern/d         - delete all lines not matching pattern (inverse match)
+    q a q:g/pattern/y A                   - copy all lines matching a pattern to register 'a'.
+
+    :bufdo g/pattern/d                    - delete all lines matching 'pattern' in all buffers
+    :bufdo g/pattern/s/old/new/g          - replace 'old' with 'new' on matching lines in all buffers
+    :argdo g/pattern/d | update           - delete all lines matching 'pattern' in each file and save
+    :argdo g/pattern/s/old/new/g | update - replace 'old' with 'new' on matching lines in each file and save
+    :cdo g/pattern/d                      - delete all lines matching 'pattern' in all quickfix entries
+    :cdo g/pattern/s/old/new/g            - replace 'old' with 'new' on matching lines in all quickfix entries
 
