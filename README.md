@@ -61,20 +61,27 @@
 
 ### Windows
 
-    :sp[lit] {file} or :new {file}      - open {file} in a new buffer and create horizontall window
-    :vs[plit] {file} or :vnew {file}    - open {file} in a new buffer and create vertical window
+    :sp[lit] {file} or :new {file}      - open {file} in a new buffer and create horizontal split
+    :vs[plit] {file} or :vnew {file}    - open {file} in a new buffer and create vertical split
+
     :on[ly]!                            - close all windows except current
     CTRL-w o                            - close all windows except current
     CTRL-w s                            - split active window horizontally
     CTRL-w v                            - split active window vertically
-    CTRL-w w                            - switch windows
+    CTRL-w w                            - cycle through windows
     CTRL-w p                            - switch to previous window
-    CTRL-w n                            - open new buffer in horizantal split
+    CTRL-w n                            - open a new empty window (horizontal split)
     CTRL-w q                            - quit a window
-    CTRL-w j or CTRL-w <Dn>             - switch to windows below
+
+    CTRL-w j or CTRL-w <Dn>             - switch to window below
     CTRL-w k or CTRL-w <Up>             - switch to window above
     CTRL-w h or CTRL-w <Left>           - switch to window left
     CTRL-w l or CTRL-w <Right>          - switch to window right
+
+    CTRL-w H                            - move window to far left
+    CTRL-w J                            - move window to bottom
+    CTRL-w K                            - move window to top
+    CTRL-w L                            - move window to far right
     CTRL-w r                            - rotate the windows clockwise
     CTRL-w R                            - rotate the windows counter-clockwise
     CTRL-w x                            - exchange windows, horizontal
@@ -83,9 +90,11 @@
     CTRL-w |                            - maximize window width of current split
     CTRL-w =                            - normalize all split sizes
     CTRL-w T                            - break out current window into new tab
+
     :res[size] {num}                    - resize active horizontal window by {num} rows
-    :vert[ical] res[size] {num}         - resize active vertical window by {num} rows
-    {buffer_id}CTRL-w ^                 - split windows with the buffer of {id}
+    :vert[ical] res[size] {num}         - resize active vertical window by {num} columns
+    {buffer_id}CTRL-w ^                 - split window and edit buffer {id}
+
     :windo {cmd}                        - execute {cmd} for all windows
     :windo difft[his]                   - start diff mode in all open windows
     :windo diffo[ff]                    - stop diff mode for all open windows
