@@ -3,6 +3,7 @@
 ### Buffers - Open / Close / Save
 
     :e[dit] {file}                        - load {file} into a buffer (replaces current window's buffer)
+    :ene[w]                               - create a new empty buffer, within the current window
     :fin[d] {file}                        - search and open {file}
     :badd {file}                          - add {file} to the buffer list without opening
 
